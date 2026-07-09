@@ -78,8 +78,10 @@ export const GoalSettings: React.FC<GoalSettingsProps> = ({ settings, onSave }) 
         label="Goal End"
         type="date"
         value={endDate}
-        onChange={(e) => setEndDate(e.target.value)}
-        disabled={periodOption !== 'custom'}
+        onChange={(e) => {
+          setEndDate(e.target.value);
+          setPeriodOption('custom');
+        }}
       />
 
       <Select
